@@ -1,0 +1,180 @@
+{
+  "version": "alpha",
+  "content":{
+    "hindi":{
+      "language":{
+        "caption": "Select Language",
+        "button": ["हिंदी", "English", "मराठी", "বাংলা", " తెలుగు", "اردو"],
+        "buttonShape": ["circle","circle","circle","circle","circle","circle"],
+        "buttonColor": ["#ff1616", "black", "gray", "gray", "gray", "gray"]
+      },
+      "locationConsent":{
+        "caption": "",
+        "button": ["आपके इंटरनेट पते से जगह की जानकारी का इस्तेमाल करें", "खुद  से  जगह भरे"],
+        "buttonShape": ["rectangle", "rectangle"],
+        "buttonColor": ["red", "gray"]
+
+      },
+      "city":{
+        "caption": "क्या आपकी जगह है:",
+        "button": ["हाँ ", "न "],
+        "buttonShape": ["rectangle", "rectangle"],
+        "buttonColor": ["red", "gray"]
+      },
+      "bedstats":{
+        "caption": "आपको इस अस्पताल में बिस्तर मिल सकती है :",
+        "button": ["", "दूसरा ", "पिछला ", "इसमें बिस्तर नहीं है ? यहाँ खबर करें !", "पूरी सूची"],
+        "buttonShape": ["rectangle", "rectangle", "rectangle", "circle", "rectangle"],
+        "buttonColor": ["gray", "gray", "gray", "gray", "gray"]
+      }
+    },
+    "english":{
+      "language":{
+        "caption": "Select Language",
+        "button": ["हिंदी", "English", "मराठी", "বাংলা", " తెలుగు", "اردو"],
+        "buttonShape": ["circle","circle","circle","circle","circle","circle"],
+        "buttonColor": ["#ff1616", "black", "gray", "gray", "gray", "gray"]
+      },
+      "locationConsent":{
+        "caption": "",
+        "button": ["Detect location automatically", "Or would you like to select it manually"],
+        "buttonShape": ["rectangle", "rectangle"],
+        "buttonColor": ["red", "gray"]
+      },
+      "city":{
+        "caption": "Are you in",
+        "button": ["Yes", "No"],
+        "buttonShape": ["rectangle", "rectangle"],
+        "buttonColor": ["red", "gray"]
+      },
+      "bedstats":{
+        "caption": "You may find a bed at:",
+        "button": ["", "next", "previous", "beds unavailabe, report here!", "full list"],
+        "buttonShape": ["rectangle", "rectangle", "rectangle", "circle", "rectangle"],
+        "buttonColor": ["black", "black", "gray", "gray", "gray"]
+      }
+    },
+    "marathi":{
+      "language":{
+        "caption": "Select Language",
+        "button": ["हिंदी", "English", "मराठी", "বাংলা", " తెలుగు", "اردو"],
+        "buttonShape": ["circle","circle","circle","circle","circle","circle"],
+        "buttonColor": ["#ff1616", "black", "#ff5757", "#ebd271", "#008037", "#c4882d"]
+      },
+      "locationConsent":{
+        "caption": "",
+        "button": ["स्थान ऑटो शोध", "आपल्या स्थान भरे"],
+        "buttonShape": ["rectangle", "rectangle"],
+        "buttonColor": ["red", "black"]
+      },
+      "city":{
+        "caption": "आपले स्थान आहे",
+        "button": ["नाही", "होय "],
+        "buttonShape": ["rectangle", "rectangle"],
+        "buttonColor": ["red", "black"]
+      },
+      "bedstats":{
+        "caption": "आपण या रुग्णालयात पलंग घेऊ शकता:",
+        "button": ["पुढे", "पहिला", "यामध्ये बेड्स अनुपलब्ध आहेत का? येथे नोंदवा!!", "संपूर्ण यादी"],
+        "buttonShape": ["rectangle", "rectangle", "circle", "rectangle"],
+        "buttonColor": ["black", "black", "red", "black"]
+      }
+    },
+    "bengali":{
+      "language":{
+        "caption": "Select Language",
+        "button": ["हिंदी", "English", "मराठी", "বাংলা", " తెలుగు", "اردو"],
+        "buttonShape": ["circle","circle","circle","circle","circle","circle"],
+        "buttonColor": ["#ff1616", "black", "#ff5757", "#ebd271", "#008037", "#c4882d"]
+      },
+      "locationConsent":{
+        "caption": "",
+        "button": ["Detect location automatically", "Or would you like to select it manually"],
+        "buttonShape": ["rectangle", "rectangle"],
+        "buttonColor": ["red", "black"]
+      },
+      "city":{
+        "caption": "Are you in",
+        "button": ["No", "Yes"],
+        "buttonShape": ["rectangle", "rectangle"],
+        "buttonColor": ["red", "black"]
+      },
+      "bedstats":{
+        "caption": "You may find a bed at:",
+        "button": ["next", "previous", "beds unavailabe, report here!", "full list"],
+        "buttonShape": ["rectangle", "rectangle", "circle", "rectangle"],
+        "buttonColor": ["black", "black", "red", "black"]
+      }
+    },
+    "telugu":{
+      "language":{
+        "caption": "Select Language",
+        "button": ["हिंदी", "English", "मराठी", "বাংলা", " తెలుగు", "اردو"],
+        "buttonShape": ["circle","circle","circle","circle","circle","circle"],
+        "buttonColor": ["#ff1616", "black", "#ff5757", "#ebd271", "#008037", "#c4882d"]
+      },
+      "locationConsent":{
+        "caption": "",
+        "button": ["Detect location automatically", "Or would you like to select it manually"],
+        "buttonShape": ["rectangle", "rectangle"],
+        "buttonColor": ["red", "black"]
+      },
+      "city":{
+        "caption": "Are you in",
+        "button": ["No", "Yes"],
+        "buttonShape": ["rectangle", "rectangle"],
+        "buttonColor": ["red", "black"]
+      },
+      "bedstats":{
+        "caption": "You may find a bed at:",
+        "button": ["next", "previous", "beds unavailabe, report here!", "full list"],
+        "buttonShape": ["rectangle", "rectangle", "circle", "rectangle"],
+        "buttonColor": ["black", "black", "red", "black"]
+      }
+    },
+    "telugu":{
+      "language":{
+        "caption": "Select Language",
+        "button": ["हिंदी", "English", "मराठी", "বাংলা", " తెలుగు", "اردو"],
+        "buttonShape": ["circle","circle","circle","circle","circle","circle"],
+        "buttonColor": ["#ff1616", "black", "#ff5757", "#ebd271", "#008037", "#c4882d"]
+      },
+      "locationConsent":{
+        "caption": "",
+        "button": ["Detect location automatically", "Or would you like to select it manually"],
+        "buttonShape": ["rectangle", "rectangle"],
+        "buttonColor": ["red", "black"]
+      },
+      "city":{
+        "caption": "Are you in",
+        "button": ["No", "Yes"],
+        "buttonShape": ["rectangle", "rectangle"],
+        "buttonColor": ["red", "black"]
+      },
+      "bedstats":{
+        "caption": "You may find a bed at:",
+        "button": ["next", "previous", "beds unavailabe, report here!", "full list"],
+        "buttonShape": ["rectangle", "rectangle", "circle", "rectangle"],
+        "buttonColor": ["black", "black", "red", "black"]
+      }
+    },
+    "machine":{
+      "language":{
+        "buttonShape": ["circle","circle","circle","circle","circle","circle"],
+        "buttonColor": ["#ff1616", "black", "#ff5757", "#ebd271", "#008037", "#c4882d"]
+      },
+      "locationConsent":{
+        "buttonShape": ["rectangle", "rectangle"],
+        "buttonColor": ["red", "black"]
+      },
+      "city":{
+        "buttonShape": ["rectangle", "rectangle"],
+        "buttonColor": ["red", "black"]
+      },
+      "bedstats":{
+        "buttonShape": ["rectangle", "rectangle", "circle", "rectangle"],
+        "buttonColor": ["black", "black", "red", "black"]
+      }
+    }
+  }
+}
