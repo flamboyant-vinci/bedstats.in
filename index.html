@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<html lang="en" dir="ltr">
+  <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,42 +16,45 @@
     <meta name="theme-color" content="#ffffff">
     <!-- stylesheets -->
     <link rel="apple-touch-startup-image" href="assets/ios_splashscreen.png" />
-    <link rel="stylesheet" type="text/css" href="style.css" media="screen"/>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
     <title>BedStats - Find covid beds in your city now</title>
-</head>
-<section id="loadingPage">
-  <img src="assets/loading.svg" alt="">
-</section>
-<body>
-  <header>
-    <p>BedStats.</p>
-  </header>
-  <h1 style="display: none">BedStats - Find covid beds in your city now</h1>
-<div class="caption">
-  <h2 id="caption">Select Language</h2>
-</div>
-<div class="container">
-  <div id="lang-1" onclick="triggerNext(this.id)" class="button circle">
-    <span>हिंदी</span>
-  </div>
-  <div id="lang-2" onclick="triggerNext(this.id)" class="button circle">
-    <span>English</span>
-  </div>
-  <div id="lang-3" onclick="triggerNext(this.id)" class="button circle">
-    <span>मराठी</span>
-  </div>
-  <div id="lang-4" onclick="triggerNext(this.id)" class="button circle">
-    <span>বাংলা</span>
-  </div>
-  <div id="lang-5" onclick="triggerNext(this.id)" class="button circle">
-    <span>తెలుగు</span>
-  </div>
-  <div id="lang-6" onclick="triggerNext(this.id)" class="button circle">
-    <span>اردو</span>
-  </div>
-</div>
-</body>
-<script type="text/javascript" src="/index.js" charset="utf-8"></script>
-<script src="hospital-beds.js" charset="utf-8"></script>
+  </head>
+  <style media="screen">
+  *, html{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  body{
+    display: block;
+    width: 100vw;
+    height: 100vh;
+  }
+    .page-container{
+      display: block;
+      width: 100%;
+      height: 100%;
+      font-family: Open Sans, sans-serif;
+      text-align: center;
+    }
+    h1{color: red}
+    .description:first-child{
+      font-style: italic;
+    }
+  </style>
+  <body>
+    <section class="page-container">
+      <div class="logo">
+        <img src="assets/logo/bedstats_logo.png" alt="bedstats">
+      </div>
+      <div class="caption">
+        <h1>BedStats</h1>
+      </div>
+      <div class="description">
+        <p style="font-style:italic">Currently in development, you can find the alpha release at <a href="https://alpha.bedstats.in">https://alpha.bedstats.in</a></p><br>
+        <p>BedStats scrapes bed availability data from state dashboards and ranks them according to <br>
+        your location making it easier to find beds fast.</p>
+      </div>
+    </section>
+  </body>
 </html>
