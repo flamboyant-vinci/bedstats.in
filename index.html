@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- meta info for favicon compatability -->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="assets/favicon/site.webmanifest">
+    <link rel="mask-icon" href="assets/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="apple-mobile-web-app-title" content="BedStats - Find covid beds in your city now">
+    <meta name="application-name" content="BedStats - Find covid beds in your city now">
+    <meta name="msapplication-TileColor" content="#ff0000">
+    <meta name="theme-color" content="#ffffff">
+    <!-- stylesheets -->
+    <link rel="apple-touch-startup-image" href="assets/ios_splashscreen.png" />
+    <link rel="stylesheet" type="text/css" href="style.css" media="screen"/>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+    <title>BedStats - Find covid beds in your city now</title>
+</head>
+<section id="loadingPage">
+  <img src="assets/loading.svg" alt="">
+</section>
+<body>
+  <header>
+    <p>BedStats.</p>
+  </header>
+  <h1 style="display: none">BedStats - Find covid beds in your city now</h1>
+<div class="caption">
+  <h2 id="caption">Select Language</h2>
+</div>
+<div class="container">
+  <div id="lang-1" onclick="triggerNext(this.id)" class="button circle">
+    <span>हिंदी</span>
+  </div>
+  <div id="lang-2" onclick="triggerNext(this.id)" class="button circle">
+    <span>English</span>
+  </div>
+  <div id="lang-3" onclick="triggerNext(this.id)" class="button circle">
+    <span>मराठी</span>
+  </div>
+  <div id="lang-4" onclick="triggerNext(this.id)" class="button circle">
+    <span>বাংলা</span>
+  </div>
+  <div id="lang-5" onclick="triggerNext(this.id)" class="button circle">
+    <span>తెలుగు</span>
+  </div>
+  <div id="lang-6" onclick="triggerNext(this.id)" class="button circle">
+    <span>اردو</span>
+  </div>
+</div>
+</body>
+<script type="text/javascript" src="/index.js" charset="utf-8"></script>
+<script src="hospital-beds.js" charset="utf-8"></script>
+</html>
