@@ -17,41 +17,43 @@
     <!-- stylesheets -->
     <link rel="apple-touch-startup-image" href="assets/ios_splashscreen.png" />
     <link rel="stylesheet" type="text/css" href="style.css" media="screen"/>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
     <title>BedStats - Find covid beds in your city now</title>
 </head>
-<section id="loadingPage">
-  <img src="assets/loading.svg" alt="">
+<section id="loadingPage" class="loading-overlay">
+  <img class="loading-icon" src="assets/loading.svg" alt="">
 </section>
 <body>
   <header>
     <p>BedStats.</p>
   </header>
   <h1 style="display: none">BedStats - Find covid beds in your city now</h1>
-<div class="caption">
-  <h2 id="caption">Select Language</h2>
-</div>
-<div class="container">
-  <div id="lang-1" onclick="triggerNext(this.id)" class="button circle">
-    <span>हिंदी</span>
-  </div>
-  <div id="lang-2" onclick="triggerNext(this.id)" class="button circle">
-    <span>English</span>
-  </div>
-  <div id="lang-3" onclick="triggerNext(this.id)" class="button circle">
-    <span>मराठी</span>
-  </div>
-  <div id="lang-4" onclick="triggerNext(this.id)" class="button circle">
-    <span>বাংলা</span>
-  </div>
-  <div id="lang-5" onclick="triggerNext(this.id)" class="button circle">
-    <span>తెలుగు</span>
-  </div>
-  <div id="lang-6" onclick="triggerNext(this.id)" class="button circle">
-    <span>اردو</span>
-  </div>
-</div>
+  <section class="body-container">
+    <div class="caption">
+      <h2 id="caption">Select Language</h2>
+    </div>
+    <div class="container">
+      <div id="lang-1" onclick="triggerNext(this.id)" class="button circle">
+        <span>हिंदी</span>
+      </div>
+      <div id="lang-2" onclick="triggerNext(this.id)" class="button circle">
+        <span>English</span>
+      </div>
+      <div id="lang-3" onclick="triggerNext(this.id)" class="button circle">
+        <span>मराठी</span>
+      </div>
+      <div id="lang-4" onclick="triggerNext(this.id)" class="button circle">
+        <span>বাংলা</span>
+      </div>
+      <div id="lang-5" onclick="triggerNext(this.id)" class="button circle">
+        <span>తెలుగు</span>
+      </div>
+      <div id="lang-6" onclick="triggerNext(this.id)" class="button circle">
+        <span>اردو</span>
+      </div>
+    </div>
+  </section>
 </body>
-<script type="text/javascript" src="/index.js" charset="utf-8"></script>
-<script src="hospital-beds.js" charset="utf-8"></script>
+<script type="text/javascript" src="index.js" charset="utf-8"></script>
+<script type="text/javascript" src="hospital-beds.js" charset="utf-8"></script>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
 </html>

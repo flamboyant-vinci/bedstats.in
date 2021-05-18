@@ -1,41 +1,62 @@
 // geoLocation format: [latitude, longitude, cityName, dataFile]
-
-// adding data manually
-var geoLocation;
-// geoLocation.push("delhi");
-// geoLocation.push("https://coronabeds.jantasamvad.org/covid-info.js");
-// geoLocation.push("https://coronabeds.jantasamvad.org/covid-facilities.js");
-var allEntries; //format of totalEntries : [name, distance, vacancyPercentage, vacantBeds, hlat, hlong]
-var specialEntries; //[suggested, nearest, most-probable]
-var rankEntries;//name index score rank
+var allEntries; // format of totalEntries : [name, distance, vacancyPercentage, vacantBeds, hlat, hlong]
+var specialEntries; // [suggested, nearest, mostProbable]
+var rankEntries; // name index score rank
 const rankedObjects = {};//[name, score, distance, vacantBeds, latitude, longitude]
 
-
-
-//attaches the dataFile
-function getDataFile(fileLocation){
-  var imported = document.createElement('script');
-  imported.src = fileLocation;
-  imported.type = 'text/javascript';
-  document.head.appendChild(imported);
-  return('ok');
+// populates geoLocation
+async function locationCaller(){
+    return new Promise((resolve, reject) => {
+      getLocation()
+      .then(status => {
+        let delContent = ["Delhi", "https://coronabeds.jantasamvad.org/covid-info.js", "https://coronabeds.jantasamvad.org/covid-facilities.js"];
+        if (status === 'ok'){for(let string of delContent){geoLocation.push(string)}}
+      })
+      .then(() => {resolve(200)})
+      .catch(e => {e["name"] = `Error Code: ${e.code}`;reject(e)})
+  })
 }
-// delhi covid website has two different objects one for dynamic info and for static info
-getDataFile(geoLocation[3]);
-getDataFile(geoLocation[4]);
-// BUG: fill missing static info in the backend
-// BUG: generalised name format for data file to implement on all states
-//FOLLOWING ONLY WORK IF THE FILE HAS BEEN FETCHED
+function getLocation(){
+    var options = {
+      enableHighAccuracy: true,
+      timeout: 5000,
+      maximumAge: 0
+    };
 
-function mainCaller(){
-  var lombardIgnition = async () => {console.log("senor! Lombard is starting")};
-  lombardIgnition()
-    .then(() => {console.log(`if this prints then file has been fetched ${gnctd_covid_facilities_data["Rajeev Gandhi Super Speciality Hospital"].type}`)})
-    .then(() => {getSuggestions(geoLocation[0], geoLocation[1], gnctd_covid_facilities_data, gnctd_covid_data)})
+    return new Promise((resolve, reject) =>{
+      var success = (position) => {
+        geoLocation = new Array(2);
+        geoLocation[0] = position.coords.latitude;
+        geoLocation[1] = position.coords.longitude;
+        resolve('ok');
+      };
+      var error = (err) => {reject(err)};
+      navigator.geolocation.getCurrentPosition(success, error, options);
+    })
 }
 
-
+// overlay for manual selection
+function manualLocation(){
+  // overlays manual selection page
+  selectionPage();
+  // close overlay
+  // fetch data files
+}
+async function getDataFile(staticFileLocation, dynamicFileLocation){
+  let appendFile = (fileLocation) => {
+    var imported = document.createElement('script');
+    imported.src = fileLocation;
+    imported.type = 'text/javascript';
+    document.head.appendChild(imported);
+    return "ok";
+  }
+  await appendFile(staticFileLocation);
+  await appendFile(dynamicFileLocation);
+        // TESTING: manually add data strings for delhi
+        // TESTING: append data files html
+}
 async function getSuggestions(latitude, longitude, staticObject, dynamicObject){
+  console.log("getSuggestions called");
   createAllEntriesArray(latitude, longitude, staticObject, dynamicObject);
   mainRanker();
   console.log(
@@ -43,31 +64,7 @@ async function getSuggestions(latitude, longitude, staticObject, dynamicObject){
   );
 }
 
-//testing specific function
-function generateTable(tableGenerateNumber){
-  var tableGenerateNumber = +document.getElementById('tableGenerateNumber').value;
-  for (var i = 0; i < tableGenerateNumber; i++) {
-    var row = document.createElement('tr');
-    //print serial serialnumber
-    var serial = document.createElement('td');
-    serial.textContent = i + 1;
-    //print name
-    var name = document.createElement('td');
-    name.textContent = rankedObjects[(i + 1)][0];
-    //print distance
-    var distance = document.createElement('td');
-    distance.textContent = rankedObjects[(i + 1)][2];
-    //print vacant beds
-    var vacantBeds = document.createElement('td');
-    vacantBeds.textContent = rankedObjects[(i + 1)][3];
 
-    row.append(serial);
-    row.append(name);
-    row.append(distance);
-    row.append(vacantBeds);
-    document.getElementsByTagName('table')[0].append(row)
-  }
-}
 
 //object organising and calculating functions
 function createAllEntriesArray(latitude, longitude, staticObject, dynamicObject){
@@ -76,8 +73,9 @@ function createAllEntriesArray(latitude, longitude, staticObject, dynamicObject)
   var iterationNumber = 0;
   for (let key in staticObject){
     try {
-      let coords = staticObject[key]["location"].match (/\@-?[\d\.]*\,([-?\d\.]*)/g)[0].slice(1,).split(",");
+      let coords = staticObject[key]["location"].match(/\@-?[\d\.]*\,([-?\d\.]*)/g)[0].slice(1).split(",");
       let hospName = key, hlat = convertToRadian(+coords[0]), hlong = convertToRadian(+coords[1]), totalEntries = Object.keys(staticObject).length;
+      let latitude = convertToRadian(geoLocation[0]), longitude = convertToRadian(geoLocation[1]);
       let vacantBeds = dynamicObject.beds[key].vacant;
       let vacancyPercentage = vacantBeds * 100 / dynamicObject.beds[key].total;
       distance = distanceCalculator(latitude, hlat, longitude, hlong);
@@ -157,4 +155,29 @@ function getSpecialEntries(rankEntries){
       if(allEntries[i][2] > vacancy){vacancy = allEntries[i][2]; highAvailability = i}
     };// BUG: prioritise in case of same vacancy
     specialEntries = [firstRank, +nearest, +highAvailability];
+}
+//testing specific function
+function generateTable(tableGenerateNumber){
+  document.getElementsByTagName('body')[0].append(document.createElement('table'))
+  for (var i = 0; i < tableGenerateNumber; i++) {
+    var row = document.createElement('tr');
+    //print serial serialnumber
+    var serial = document.createElement('td');
+    serial.textContent = i + 1;
+    //print name
+    var name = document.createElement('td');
+    name.textContent = rankedObjects[(i + 1)][0];
+    //print distance
+    var distance = document.createElement('td');
+    distance.textContent = rankedObjects[(i + 1)][2];
+    //print vacant beds
+    var vacantBeds = document.createElement('td');
+    vacantBeds.textContent = rankedObjects[(i + 1)][3];
+
+    row.append(serial);
+    row.append(name);
+    row.append(distance);
+    row.append(vacantBeds);
+    document.getElementsByTagName('table')[0].append(row)
+  }
 }

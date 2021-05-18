@@ -49,9 +49,9 @@
       },
       "bedstats":{
         "caption": "You may find a bed at:",
-        "button": ["", "next", "previous", "beds unavailabe, report here!", "full list"],
+        "button": [" ", "next", "previous", "beds unavailabe, report here!", "full list"],
         "buttonShape": ["rectangle", "rectangle", "rectangle", "circle", "rectangle"],
-        "buttonColor": ["black", "black", "gray", "gray", "gray"]
+        "buttonColor": ["black", "black", "black", "gray", "black"]
       }
     },
     "marathi":{

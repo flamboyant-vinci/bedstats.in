@@ -4,14 +4,39 @@
   margin: 0;
   padding: 0;
 }
-#loadingPage{
-  display: none;
+.loading-overlay{
+  display: flex;
+  height: 100vh;
+  width: 100vw;
   position: fixed;
-  height: 100%;
-  width: 100%;
+  background: white;
+  opacity: 0.5;
+  justify-content: center;
+  align-items: center;
+  transition-duration: 0.5s;
+  z-index: 200;
+}
+.overlay-bg{
+  display: flex;
+  height: 100vh;
+  width: 100vw;
   align-items: center;
   justify-content: center;
-  z-index: 200;
+  background: black;
+  opacity: 50%;
+  position: absolute;
+  top: 0;
+  z-index: 100;
+}
+.overlay-container{
+  height: 90%;
+  width: 90%;
+  background: white;
+}
+.body-container{
+  display: block;
+  position: relative;
+  z-index: 100;
 }
 body{
   background: white;/*#628bb6*/
@@ -20,6 +45,43 @@ body{
   font-style: normal;
   transition-duration: 0.5s;
 }
+.message{
+  display: flex;
+  position: fixed;
+  max-width: 100%;
+  height: auto;
+  flex-direction: column;
+  border-bottom-left-radius: 10%;
+  border-bottom-right-radius: 10%;
+  background: #f3f309;
+  word-wrap: break-word;
+  animation: fadeIn 0.5s;
+  -webkit-animation: fadeIn 0.5s;
+  -moz-animation: fadeIn 0.5s;
+  -o-animation: fadeIn 0.5s;
+  -ms-animation: fadeIn 0.5s;
+  z-index: 200;
+}
+.message-type{
+  display: flex;
+  width: 100%;
+  height: auto;
+  padding: 2%;
+  border-bottom-left-radius: 10%;
+  border-bottom-right-radius: 10%;
+  background: #eacc29;
+  color: red;
+}
+.message-body{
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: auto;
+  padding: 2%;
+  background: #f3f309;
+  /* fatal error */
+}
+
 header{
   display: flex;
   position: absolute;
@@ -59,6 +121,7 @@ h2{
   margin-left: 7vw;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 .button span{
   color: white;
@@ -80,28 +143,13 @@ h2{
   border-radius: 6px;
   padding: 4px;
 }
-.modal-bg{
-  display: flex;
-  height: 100vh;
-  width: 100vw;
-  align-items: center;
-  justify-content: center;
-  background: black;
-  opacity: 50%;
-  position: absolute;
-  top: 0;
-  z-index: 100;
-}
-.modal-container{
-  height: 90%;
-  width: 90%;
-  background: white;
-}
+
 /* bedstats layout */
 .bedstats-1{
   position: relative;
   height: 40vw;
   top: -20%;
+  pointer-events: none;
 }
 .bedstats-2, .bedstats-3 {
   width: 30vw;
@@ -122,6 +170,12 @@ h2{
   bottom: 0;
   height: auto;
 }
+
+td {border: solid black 1px}
+/* TESTING */
+/* alert overlay */
+
+
 /* pc and landscape support */
 @media screen and (orientation: landscape) {
   header{
@@ -140,4 +194,39 @@ h2{
     width: 80%;
     height: 30%;
   }
+  /* bedstats layout */
+  .bedstats-1{
+    position: relative;
+    height: 30vh;
+    top: -15%;
+    pointer-events: none;
+  }
+  .bedstats-2, .bedstats-3 {
+    margin-left: 15vw;
+    margin-right: 15vw;
+    width: 30vh;
+    height: auto;
+    position: relative;
+    top: -35%;
+  }
+  .bedstats-4{
+    position: absolute;
+    left: 4%;
+    top: 70%;
+    width: 20vh;
+    height: 20vh;
+    font-size: 10px
+  }
+  .bedstats-5{
+    position: absolute;
+    width: 20%;
+    background: black!important;
+    bottom: 0;
+    height: auto;
+  }
+}
+/* animation */
+@keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
 }
