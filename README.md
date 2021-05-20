@@ -29,3 +29,4 @@ This project requires a lot of different skills:
 With the virus moving to the rural regions, a super simple application which collects and serves permanent and temporary hospitals' location and availability data would be of great help. With greater language support it can be accessed by a lot more people.
 ## Contact
 If you would like to voulanteer in this project just send me an email at ivoulanteer@bedstats.in.
+Chin up! Keep well!
