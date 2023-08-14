@@ -15,7 +15,7 @@ Contains latest information about precautions, drug request procedures, recent u
 - docs.bedstats.in
 Contains documentation.
 
-## Voulanteering
+## Volunteering
 This project requires a lot of different skills:
   1. Non-technical
      1. Translators  (Hindi, Marathi, Bengali, Telugu, Urdu)
